@@ -201,28 +201,6 @@ p {
   background: #111111;
 }
 
-.statement-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 35px;
-}
-
-.statement-card {
-  background: #171717;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 22px;
-  padding: 30px;
-  text-align: center;
-}
-
-.statement-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
-
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -336,23 +314,33 @@ p {
 /* House of Craft images */
 
 .luxury-image.wedding {
-  background-image: url("assets/wedding-1.jpg");
+  background-image: url("assets/wedding-suit.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .luxury-image.lining {
-  background-image: url("assets/lining-1.jpg");
+  background-image: url("assets/lining-detail.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .luxury-image.statement {
-  background-image: url("assets/statement-1.jpg");
+  background-image: url("assets/statement-suit.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .luxury-image.women {
-  background-image: url("assets/women-1.jpg");
+  background-image: url("assets/women-suit.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .luxury-image.signature {
-  background-image: url("assets/signature-1.jpg");
+  background-image: url("assets/signature-pieces.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .top-space {
@@ -450,29 +438,6 @@ p {
   transform: scale(1.03);
 }
 
-.gallery-hero {
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:
-    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)),
-    url("assets/wedding-1.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.gallery-hero-content h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 4rem;
-  margin-bottom: 10px;
-}
-
-.gallery-hero-content p {
-  color: #d8c8ae;
-}
-
 .footer {
   padding: 34px 0;
   border-top: 1px solid rgba(255,255,255,0.08);
@@ -517,6 +482,8 @@ p {
   color: #ffffff;
 }
 
+/* Mobile */
+
 @media (max-width: 992px) {
   .desktop-btn {
     display: none;
@@ -546,49 +513,7 @@ p {
     display: flex;
   }
 
-  .two-column,
-  .cards,
-  .statement-grid,
-  .process-grid,
-  .journal-grid,
-  .journal-feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Home portfolio slider on mobile */
-  .luxury-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 18px;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .luxury-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .portfolio-link {
-    flex: 0 0 85%;
-    scroll-snap-align: start;
-  }
-
-  .luxury-card,
-  .luxury-card.large,
-  .luxury-card.wide {
-    min-height: 360px;
-    width: 100%;
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .luxury-overlay {
-    padding: 22px 18px;
-  }
-
-  /* Gallery pages stay one column on mobile */
-  .gallery-grid {
+  .two-column {
     grid-template-columns: 1fr;
   }
 
@@ -606,8 +531,60 @@ p {
     font-size: 3.3rem;
   }
 
-  .gallery-hero-content h1 {
-    font-size: 3rem;
+  /* Auto slider base */
+  .mobile-auto-slider {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+  }
+
+  .mobile-auto-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-auto-slider .slide-card,
+  .mobile-auto-slider .portfolio-link,
+  .mobile-auto-slider .journal-feature-card {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+
+  .slider-menwomen .card,
+  .slider-process .process-box,
+  .slider-craft .luxury-card,
+  .slider-journal .journal-feature-card {
+    min-height: 360px;
+  }
+
+  .slider-craft .portfolio-link {
+    flex: 0 0 85%;
+  }
+
+  .luxury-card,
+  .luxury-card.large,
+  .luxury-card.wide {
+    width: 100%;
+    min-height: 360px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .luxury-overlay {
+    padding: 22px 18px;
+  }
+
+  .journal-feature-grid,
+  .cards,
+  .process-grid {
+    display: flex;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -643,13 +620,4 @@ p {
   .journal-feature-text h3 {
     font-size: 1.8rem;
   }
-
-  .gallery-hero {
-    height: 50vh;
-  }
-
-  .gallery-hero-content h1 {
-    font-size: 2.4rem;
-  }
 }
-
