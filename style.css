@@ -37,7 +37,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(11,11,11,0.94);
+  background: rgba(11, 11, 11, 0.94);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -50,8 +50,14 @@ img {
   gap: 24px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   height: 58px;
+  width: auto;
 }
 
 .menu {
@@ -92,8 +98,8 @@ img {
 }
 
 .btn-gold {
-  background: linear-gradient(135deg,#d2b078,#9d7440);
-  color: #111;
+  background: linear-gradient(135deg, #d2b078, #9d7440);
+  color: #111111;
 }
 
 .btn-gold:hover {
@@ -143,7 +149,7 @@ h2 {
 }
 
 .hero h1 {
-  font-size: clamp(3rem,6vw,5.6rem);
+  font-size: clamp(3rem, 6vw, 5.6rem);
   margin-bottom: 22px;
 }
 
@@ -160,7 +166,7 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* INNER PAGE HERO */
+/* INNER HERO */
 
 .inner-hero {
   min-height: 70vh;
@@ -178,14 +184,14 @@ h2 {
   padding: 110px 0;
 }
 
-/* SECTIONS */
+/* GENERAL */
 
 .section {
   padding: 92px 0;
 }
 
 .dark-section {
-  background: #111;
+  background: #111111;
 }
 
 .center {
@@ -197,7 +203,7 @@ h2 {
 }
 
 h2 {
-  font-size: clamp(2.2rem,4vw,3.7rem);
+  font-size: clamp(2.2rem, 4vw, 3.7rem);
   margin-bottom: 18px;
 }
 
@@ -212,48 +218,64 @@ p {
 }
 
 .brand-statement {
-  background: #111;
+  background: #111111;
 }
 
-/* TWO COLUMN */
+/* LAYOUTS */
 
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
+  align-items: start;
 }
-
-/* CARDS */
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.card {
+.card,
+.process-box {
   background: #171717;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 22px;
   padding: 28px;
 }
 
-.card h3 {
+.card h3,
+.process-box h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
   margin-bottom: 12px;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* PORTFOLIO GRID */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 40px;
+}
+
+.process-box span {
+  color: #d2b078;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* HOUSE OF CRAFT */
 
 .portfolio-link {
+  text-decoration: none;
+  color: inherit;
   display: block;
 }
 
 .luxury-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 45px;
 }
@@ -263,35 +285,54 @@ p {
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 24px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(210,176,120,0.35);
 }
 
 .luxury-image-wrap {
   width: 100%;
   height: 340px;
   overflow: hidden;
+  background: #111111;
 }
 
 .luxury-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .luxury-overlay {
   padding: 22px 20px 24px;
+  background: #171717;
 }
 
 .luxury-overlay h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
+  color: #ffffff;
   margin-bottom: 8px;
+  line-height: 1.1;
 }
 
 .luxury-overlay p {
   color: #dfd3c1;
+  margin: 0;
 }
 
 /* JOURNAL */
+
+.top-space {
+  margin-top: 30px;
+}
 
 .journal-home {
   background: #0f0f0f;
@@ -299,22 +340,32 @@ p {
 
 .journal-feature-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 40px;
 }
 
 .journal-feature-card {
+  text-decoration: none;
+  color: inherit;
   background: #171717;
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 24px;
   overflow: hidden;
+  display: block;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.journal-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(210,176,120,0.35);
 }
 
 .journal-feature-image img {
   width: 100%;
   height: 360px;
   object-fit: cover;
+  display: block;
 }
 
 .journal-feature-text {
@@ -325,6 +376,11 @@ p {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2rem;
   margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.journal-feature-text p {
+  color: #d8c8ae;
 }
 
 /* CONSULTATION */
@@ -334,23 +390,34 @@ p {
   margin: 0 auto;
 }
 
-.consultation-text {
+.consultation-text,
+.contact-text {
   max-width: 700px;
   margin: 0 auto 26px;
+  color: #d8c8ae;
 }
 
 /* GALLERY */
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
 .gallery-item {
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.08);
+  aspect-ratio: 4 / 5;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* FOOTER */
@@ -365,6 +432,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -372,6 +440,7 @@ p {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   letter-spacing: 0.08em;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
@@ -383,17 +452,17 @@ p {
 .footer-links {
   display: flex;
   gap: 18px;
+  flex-wrap: wrap;
   color: #d2b078;
 }
 
 .footer-links a:hover {
-  color: #fff;
+  color: #ffffff;
 }
 
 /* MOBILE */
 
 @media (max-width: 992px) {
-
   .desktop-btn {
     display: none;
   }
@@ -406,14 +475,16 @@ p {
     position: absolute;
     top: 86px;
     right: 5%;
-    background: #111;
+    background: #111111;
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 18px;
     padding: 18px 20px;
     width: 220px;
     display: none;
     flex-direction: column;
+    align-items: flex-start;
     gap: 14px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
   }
 
   .menu.show {
@@ -426,6 +497,7 @@ p {
 
   .hero {
     min-height: 84vh;
+    background-size: cover;
   }
 
   .hero-content {
@@ -436,26 +508,63 @@ p {
     font-size: 3.3rem;
   }
 
-  .luxury-grid {
-    display: flex;
+  .mobile-auto-slider {
+    display: flex !important;
     overflow-x: auto;
     gap: 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 10px;
   }
 
-  .portfolio-link {
+  .mobile-auto-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-auto-slider .slide-card,
+  .mobile-auto-slider .journal-feature-card {
     flex: 0 0 85%;
+    scroll-snap-align: start;
   }
 
   .journal-feature-grid {
     display: flex;
-    overflow-x: auto;
-    gap: 18px;
   }
 
+  .luxury-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 4px 2px 14px;
+  }
+
+  .luxury-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-link {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+
+  .luxury-card {
+    min-height: 100%;
+  }
+
+  .luxury-image-wrap {
+    height: 300px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 640px) {
-
   .container {
     width: 92%;
   }
@@ -476,8 +585,23 @@ p {
     padding: 74px 0;
   }
 
+  .luxury-overlay h3 {
+    font-size: 1.8rem;
+  }
+
   .journal-feature-image img {
     height: 300px;
   }
 
+  .journal-feature-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .portfolio-link {
+    flex: 0 0 88%;
+  }
+
+  .luxury-image-wrap {
+    height: 270px;
+  }
 }
