@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Maison Motaniel</title>
+  <meta name="description" content="Learn about Maison Motaniel, a bespoke tailoring house creating refined garments for men and women through private consultation and signature craftsmanship." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+
+      <a href="index.html" class="logo">
+        <img src="assets/motaniel-logo.png" alt="Maison Motaniel Logo">
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="about.html">About</a>
+        <a href="craft.html">House of Craft</a>
+        <a href="journal.html">Motaniel Journal</a>
+        <a href="consultation.html">Consultation</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="consultation.html" class="btn btn-gold desktop-btn">Book Consultation</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+      </div>
+
+    </div>
+  </header>
+
+  <section class="inner-hero">
+    <div class="container inner-hero-content">
+      <p class="eyebrow">About Maison Motaniel</p>
+      <h1>The House of Motaniel</h1>
+      <p class="hero-text">
+        A bespoke tailoring house creating garments with story, precision, and presence for men and women who value elegance and individuality.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="eyebrow">Who We Are</p>
+        <h2>Crafted with intention, tailored with meaning.</h2>
+      </div>
+      <div>
+        <p>
+          Maison Motaniel is a bespoke tailoring house dedicated to creating refined garments through private consultation, thoughtful craftsmanship, and elevated personal style.
+        </p>
+        <br>
+        <p>
+          Each piece is designed with purpose — from silhouette and structure to the details hidden inside — allowing every garment to reflect the identity, taste, and story of the person wearing it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section">
+    <div class="container">
+      <p class="eyebrow center">Our Philosophy</p>
+      <h2 class="center">Tailoring beyond the garment.</h2>
+      <p class="brand-intro center">
+        Maison Motaniel believes that tailoring is not simply about clothing. It is about presence, confidence, memory, and personal expression.
+      </p>
+
+      <div class="statement-grid">
+        <div class="statement-card">
+          <h3>Personal Expression</h3>
+          <p>Every garment is crafted to reflect the wearer’s individuality and vision.</p>
+        </div>
+
+        <div class="statement-card">
+          <h3>Precision Craft</h3>
+          <p>Structure, fit, and detail are approached with care to ensure an elevated finish.</p>
+        </div>
+
+        <div class="statement-card">
+          <h3>Meaningful Detail</h3>
+          <p>Interior linings and signature details transform garments into personal stories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-column">
+      <div>
+        <p class="eyebrow">The Experience</p>
+        <h2>A house built on consultation and craftsmanship.</h2>
+      </div>
+      <div>
+        <p>
+          Every Maison Motaniel piece begins with conversation. Through consultation, the house explores the occasion, style direction, fit preferences, and special details that shape the final garment.
+        </p>
+        <br>
+        <p>
+          This process allows each piece to feel intentional, polished, and deeply personal — whether created for a wedding, a celebration, a statement moment, or everyday distinction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark-section">
+    <div class="container consultation-box">
+      <p class="eyebrow center">Discover More</p>
+      <h2 class="center">Explore the craft behind the house.</h2>
+      <p class="center consultation-text">
+        View signature work, explore the journal, or begin your bespoke journey through private consultation.
+      </p>
+
+      <div class="hero-buttons center-buttons">
+        <a href="craft.html" class="btn btn-gold">Enter House of Craft</a>
+        <a href="consultation.html" class="btn btn-outline">Enter Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div>
+        <div class="footer-brand">MAISON MOTANIEL</div>
+        <p class="footer-text">Bespoke tailoring for men and women through private consultation.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="consultation.html">Consultation</a>
+        <a href="https://www.instagram.com/maisonmotaniel" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/valenciadigitalstudio" target="_blank">Valencia Digital Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>
