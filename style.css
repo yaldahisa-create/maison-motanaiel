@@ -221,6 +221,10 @@ p {
   background: #111111;
 }
 
+.carousel-shell {
+  overflow: hidden;
+}
+
 /* LAYOUTS */
 
 .two-column {
@@ -271,13 +275,24 @@ p {
   text-decoration: none;
   color: inherit;
   display: block;
+  flex: 0 0 32%;
+  scroll-snap-align: start;
 }
 
 .luxury-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
   margin-top: 45px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 2px 14px;
+}
+
+.luxury-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .luxury-card {
@@ -339,10 +354,19 @@ p {
 }
 
 .journal-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
   margin-top: 40px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 2px 14px;
+}
+
+.journal-feature-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .journal-feature-card {
@@ -354,6 +378,8 @@ p {
   overflow: hidden;
   display: block;
   transition: transform 0.35s ease, border-color 0.35s ease;
+  flex: 0 0 48%;
+  scroll-snap-align: start;
 }
 
 .journal-feature-card:hover {
@@ -508,51 +534,12 @@ p {
     font-size: 3.3rem;
   }
 
-  .mobile-auto-slider {
-    display: flex !important;
-    overflow-x: auto;
-    gap: 18px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-bottom: 10px;
-  }
-
-  .mobile-auto-slider::-webkit-scrollbar {
-    display: none;
-  }
-
-  .mobile-auto-slider .slide-card,
-  .mobile-auto-slider .journal-feature-card {
-    flex: 0 0 85%;
-    scroll-snap-align: start;
-  }
-
-  .journal-feature-grid {
-    display: flex;
-  }
-
-  .luxury-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding: 4px 2px 14px;
-  }
-
-  .luxury-grid::-webkit-scrollbar {
-    display: none;
-  }
-
   .portfolio-link {
     flex: 0 0 84%;
-    scroll-snap-align: start;
   }
 
-  .luxury-card {
-    min-height: 100%;
+  .journal-feature-card {
+    flex: 0 0 84%;
   }
 
   .luxury-image-wrap {
@@ -598,6 +585,10 @@ p {
   }
 
   .portfolio-link {
+    flex: 0 0 88%;
+  }
+
+  .journal-feature-card {
     flex: 0 0 88%;
   }
 
