@@ -218,31 +218,33 @@
       menu.classList.toggle("show");
     });
 
-    function autoScrollSlider(sliderId, speed = 0.4) {
+    function autoScrollSlider(sliderId, speed = 0.35) {
       const slider = document.getElementById(sliderId);
       if (!slider) return;
 
       let pause = false;
 
       function scroll() {
-        if (window.innerWidth <= 992 && !pause) {
+        if (!pause) {
           slider.scrollLeft += speed;
 
           if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
             slider.scrollLeft = 0;
           }
         }
+
         requestAnimationFrame(scroll);
       }
 
-      slider.addEventListener("touchstart", () => pause = true);
-      slider.addEventListener("touchend", () => pause = false);
       slider.addEventListener("mouseenter", () => pause = true);
       slider.addEventListener("mouseleave", () => pause = false);
+      slider.addEventListener("touchstart", () => pause = true);
+      slider.addEventListener("touchend", () => pause = false);
 
       scroll();
     }
 
+    autoScrollSlider("mobileCraftSlider", 0.35);
     autoScrollSlider("mobileJournalSlider", 0.25);
   </script>
 
