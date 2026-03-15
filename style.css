@@ -596,3 +596,50 @@ p {
     height: 270px;
   }
 }
+.archive-image {
+  cursor: pointer;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.archive-image:hover {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+  z-index: 3000;
+}
+
+.lightbox.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 18px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.45);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 2.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
